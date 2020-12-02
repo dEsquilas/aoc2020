@@ -27,11 +27,40 @@ int main(){
 				
 				int oper = values[i] * values[j];
 				
-				cout << to_string(values[i]) << " - " << to_string(values[j]) << " : " << oper << endl;
+				cout << "Values: " << to_string(values[i]) << " - " << to_string(values[j]) << " Results(1): " << oper << endl;
+				break;
 				
 			}
 		
 		}
+		
+	}
+	
+	bool stop = false;
+	
+	for(int i = 0; i < values.size(); i++){
+		
+		for(int j = i+1; j < values.size(); j++){
+			
+			for(int t = i+1; t < values.size(); t++)
+				
+				if(values[i] + values[j] + values[t] == 2020){
+					
+					int oper = values[i] * values[j] * values[t];
+					
+					cout << "Values: " << to_string(values[i]) << " - " << to_string(values[j]) << " - " << to_string(values[t]) << " Results(2):  " << oper << endl;
+					stop = true;
+					break;
+					
+				}
+			
+			if(stop)
+				break;
+			
+		}
+		
+		if(stop)
+			break;
 		
 	}
 	

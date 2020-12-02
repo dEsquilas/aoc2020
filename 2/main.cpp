@@ -84,26 +84,29 @@ class Password{
 
 int main(){
 	
-	vector<Password> passwds;
-	
 	ifstream input("input");
 	
-	int count = 0;
+	int valid1 = 0;
+	int valid2 = 0;
 	
 	if (input.is_open()){
 		string tmp;
 		while ( getline (input,tmp) ){
-			//cout << tmp << '\n';
-			Password *n = new Password(tmp);
-			if(n->isValid2())
-				count++;
 			
-			passwds.push_back(*n);
+			Password *n = new Password(tmp);
+			
+			if(n->isValid())
+				valid1++;
+			
+			if(n->isValid2())
+				valid2++;
+			
 		}
 		input.close();
 	}
 	
-	cerr << "Correct Passwords: " << to_string(count) << endl;
+	cerr << "Correct Passwords (p1): " << to_string(valid1) << endl;
+	cerr << "Correct Passwords (p2): " << to_string(valid2) << endl;
 	
 	return 0;
 	
