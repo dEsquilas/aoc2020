@@ -70,8 +70,6 @@ class Seat{
 
 			id = col + row * 8;
 
-			cout << "Row: " << row << " Col: " << col  << " Id: " << id << endl;
-
 		}
 
 };
@@ -105,7 +103,7 @@ class Plane{
 
 			for(int i = min + 1; i < max; i++){
 				if(!idExists(i)){
-					cout << "Not found" << i << endl;
+					return i;
 				}
 			}
 
@@ -141,10 +139,10 @@ int main(){
 		input.close();
 	}
 
-	p->searchEmptyId(minID, maxID);
+	int seatID = p->searchEmptyId(minID, maxID);
 
 	cout << "Max ID (P1): " << maxID << endl;
-	cout << "Min ID (P2): " << minID << endl;
+	cout << "Seat ID (P2): " << seatID << endl;
 
 	return 0;
 
