@@ -1,5 +1,6 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/erase.hpp>
+#include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -7,165 +8,174 @@
 #include <string>
 #include <algorithm>
 
+
 using namespace std;
 using namespace boost;
 using namespace boost::algorithm;
 
-vector<string> explode(const string& s, char c) {
-
-	string::size_type i = 0;
-	string::size_type j = s.find(c);
-
-	vector<string> v;
-
-	while (j != string::npos) {
-		v.push_back(s.substr(i, j-i));
-		i = ++j;
-		j = s.find(c, j);
-
-		if (j == string::npos)
-			v.push_back(s.substr(i, s.length()));
-	}
-
-	return v;
-}
 
 class BagRule{
-
+	
 	public:
+		
 		string type;
-		vector<string> rules;
-
+		vector<string> contains;
 		BagRule(string data){
-
+			
 			parse(data);
-
+		
 		}
-
+		
 		BagRule(){
-
+		
 		}
-
+		
 		void parse(string data){
-
+			erase_all(data, " bags");
+			erase_all(data, " bag");
 			erase_all(data, ".");
-			erase_all(data, "bags");
-			erase_all(data, "bag");
-
+	
+			
 			int p1 = data.find(" contain ");
-
-			type = data.substr(0, p1-1);
-
-			string containString = data.substr(p1 + 9);
-			replace_all(containString, ", ", ",");
-			vector<string> exploded = explode(containString, ',');
-
-			if(exploded.size() > 0)
-				for(auto s: exploded){
-
-					string bagType = s.substr(2);
-					rules.push_back(bagType);
-
+			
+			type = data.substr(0, p1);
+			string childsString = data.substr(p1 + 9);
+			
+			vector<string> splited;
+			
+			split(splited, childsString, is_any_of(","));
+			
+			for(auto s: splited){
+				
+				trim(s);
+				
+				if(s.compare("no other") != 0) {
+					
+					string tmp = s.substr(2);
+					contains.push_back(tmp);
+					
 				}
-			else{
-
-				if(containString.compare("no other ") != 0){
-
-					string bagType = containString.substr(2);
-					rules.push_back(bagType);
-
-				}
-
 			}
-
+			
 		}
-
-		vector<vector<string>> getChildsRoute(){
-
-			vector<vector<string>> list;
-
-			if(contains.size() == 0)
-				return list;
-
-			else{
-
-
-				foreach(auto c: contains){
-
-
-
-				}
-
-				return list;
-
-			}
-
-		}
-
+		
 };
-
 
 class Bag{
-
+	
 	public:
-		vector<Bag> contains;
 		map<string, BagRule> rules;
-		string id;
-
-		Bag(string id, map<string, BagRule> rules){
-			this->id = id;
+		vector<Bag> childs;
+		string type;
+		Bag(string type, map<string, BagRule> rules){
+			
+			this->type = type;
 			this->rules = rules;
-
+			
 			generateChilds();
+			
 		}
-
+		Bag(){
+		
+		}
+		
 		void generateChilds(){
-
-			vector<string> childs = rules[id].rules;
-
-			for(auto c: childs){
-				Bag *tmp = new Bag(c, rules);
-				contains.push_back(*tmp);
+		
+			vector<string> childRules = rules[type].contains;
+			
+			for(auto s: childRules){
+				
+				Bag *b = new Bag(s, rules);
+				childs.push_back(*b);
+				
 			}
-
+		
 		}
-
+		
+		vector<vector<string>> getMyWay(){
+			
+			vector<vector<string>> outList;
+			vector<vector<string>> list;
+			
+			for(auto b: childs){
+				vector<vector<string>> tmp = b.getMyWay();
+				list.reserve(list.size() + tmp.size());
+				list.insert(list.end(), tmp.begin(), tmp.end());
+			}
+			
+			if(childs.size() == 0){
+				
+				vector<string> tmp;
+				tmp.push_back(type);
+				outList.push_back(tmp);
+				return outList;
+			}
+			else{
+			
+				for(auto l: list){
+					l.push_back(type);
+					outList.push_back(l);
+				}
+				
+				return outList;
+				
+			}
+			
+		}
+		
 };
 
-int main(){
-
+int main() {
+	
 	ifstream input("input");
-
-	map<string, BagRule> rules;
-	vector<Bag> bags;
-
-	if (input.is_open()){
+	
+	map <string, BagRule> rules;
+	
+	if (input.is_open()) {
 		string tmp;
-
-		while ( getline (input,tmp) ){
-
+		
+		while (getline(input, tmp)) {
+			
 			BagRule *b = new BagRule(tmp);
 			rules[b->type] = *b;
-
+			
 		}
-
+		
 		input.close();
 	}
-
-	for(auto [key, rule]: rules){
-
-		Bag *tmp = new Bag(rule.type, rules);
-		bags.push_back(*tmp);
-
+	
+	for(auto [key, b]: rules){
+		
+		cout << "Bag Type: ||" << b.type << "||" << endl;
+		cout << "Childs: " << endl;
+		
+		for(auto s: b.contains){
+			
+			cout << "\t||" << s << "||" << endl;
+			
+		}
+		
+		cout << endl << endl;
+		
 	}
-
-	vector<vector<string>> list;
-
-	for(auto b: bags){
-		cout << "BagType: " << b.id << " childs: " << b.contains.size() << endl;
+	
+	cout << endl << endl << "Creating Bag" << endl << endl;
+	
+	Bag *b = new Bag("bright white", rules);
+	
+	vector<vector<string>> ways = b->getMyWay();
+	
+	
+	cout << endl << endl << "Routes Bag: " << b->type << endl << endl;
+	
+	for(auto l: ways){
+		for(auto s: l){
+			cout << s << " - ";
+		}
+		cout << endl;
 	}
-
-
+	
+	
 	return 0;
-
+	
 }
