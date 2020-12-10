@@ -20,6 +20,8 @@ class BagRule{
 		
 		string type;
 		vector<string> contains;
+		vector<int> quantity;
+		
 		BagRule(string data){
 			
 			parse(data);
@@ -52,76 +54,95 @@ class BagRule{
 				if(s.compare("no other") != 0) {
 					
 					string tmp = s.substr(2);
+					string qs = s.substr(0, 1);
 					contains.push_back(tmp);
+					quantity.push_back(stoi(qs));
 					
 				}
 			}
 			
 		}
 		
+		
+		int getQuantity(map<string, BagRule> rules){
+			
+			BagRule currentRule= rules[type];
+			
+			if(currentRule.contains.size() == 0){
+				return 1;
+			}else{
+				
+				int i = 0;
+				int total = 0;
+				
+				for(auto r: currentRule.contains){
+					
+					BagRule br = rules[r];
+					
+					int tmp = br.getQuantity(rules) * quantity[i];
+					
+					total += tmp;
+					i++;
+					
+				}
+				
+				return total + 1;
+				
+			}
+			
+		}
+		
+		
 };
 
 class Bag{
 	
 	public:
-		map<string, BagRule> rules;
-		vector<Bag> childs;
+		vector<Bag> parents;
+		map<string, Bag> childs;
+		map<string, int> quantity;
 		string type;
-		Bag(string type, map<string, BagRule> rules){
+		Bag(string type){
 			
 			this->type = type;
-			this->rules = rules;
-			
-			generateChilds();
 			
 		}
 		Bag(){
 		
 		}
 		
-		void generateChilds(){
+		void addParent(Bag b){
 		
-			vector<string> childRules = rules[type].contains;
-			
-			for(auto s: childRules){
-				
-				Bag *b = new Bag(s, rules);
-				childs.push_back(*b);
-				
-			}
+			parents.push_back(b);
 		
 		}
 		
-		vector<vector<string>> getMyWay(){
+		vector<string> getParents(map<string, Bag> currentBags){
 			
-			vector<vector<string>> outList;
-			vector<vector<string>> list;
+			vector<string> parentsList;
 			
-			for(auto b: childs){
-				vector<vector<string>> tmp = b.getMyWay();
-				list.reserve(list.size() + tmp.size());
-				list.insert(list.end(), tmp.begin(), tmp.end());
-			}
-			
-			if(childs.size() == 0){
-				
-				vector<string> tmp;
-				tmp.push_back(type);
-				outList.push_back(tmp);
-				return outList;
+			if(currentBags[type].parents.size() == 0){
+				parentsList.push_back(type);
+				return parentsList;
 			}
 			else{
-			
-				for(auto l: list){
-					l.push_back(type);
-					outList.push_back(l);
+				
+				for(auto p: currentBags[type].parents){
+					
+					vector<string> tmp = p.getParents(currentBags);
+					parentsList.reserve(parentsList.size() + tmp.size());
+					parentsList.insert(parentsList.end(), tmp.begin(), tmp.end());
+					
 				}
 				
-				return outList;
+				parentsList.push_back(type);
+				
+				return parentsList;
 				
 			}
 			
 		}
+		
 		
 };
 
@@ -130,14 +151,17 @@ int main() {
 	ifstream input("input");
 	
 	map <string, BagRule> rules;
+	map<string, Bag> bags;
 	
 	if (input.is_open()) {
 		string tmp;
 		
 		while (getline(input, tmp)) {
 			
-			BagRule *b = new BagRule(tmp);
-			rules[b->type] = *b;
+			BagRule *br = new BagRule(tmp);
+			rules[br->type] = *br;
+			Bag *b = new Bag(br->type);
+			bags[br->type] = *b;
 			
 		}
 		
@@ -146,34 +170,31 @@ int main() {
 	
 	for(auto [key, b]: rules){
 		
-		cout << "Bag Type: ||" << b.type << "||" << endl;
-		cout << "Childs: " << endl;
-		
 		for(auto s: b.contains){
 			
-			cout << "\t||" << s << "||" << endl;
+			bags[s].parents.push_back(bags[key]);
 			
 		}
-		
-		cout << endl << endl;
-		
 	}
 	
-	cout << endl << endl << "Creating Bag" << endl << endl;
+	vector<string> bagTypestmp = bags["shiny gold"].getParents(bags);
+	vector<string> bagTypes;
 	
-	Bag *b = new Bag("bright white", rules);
-	
-	vector<vector<string>> ways = b->getMyWay();
-	
-	
-	cout << endl << endl << "Routes Bag: " << b->type << endl << endl;
-	
-	for(auto l: ways){
-		for(auto s: l){
-			cout << s << " - ";
+	for(auto s: bagTypestmp){
+		if(find(bagTypes.begin(), bagTypes.end(), s) == bagTypes.end()) {
+			bagTypes.push_back(s);
 		}
-		cout << endl;
 	}
+	
+	int count = bagTypes.size() -1;
+	
+	BagRule br = rules["shiny gold"];
+	
+	int total = br.getQuantity(rules) - 1;
+	
+	
+	cout << "Ways to get Shiny Gold (P1): " << count << endl;
+	cout << "Total bags into Shiny Gold (p2): " << total << endl;
 	
 	
 	return 0;
