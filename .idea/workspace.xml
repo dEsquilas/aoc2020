@@ -9,7 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dd57bb7-be91-432b-af40-5e35fe8299fa" name="Default Changelist" comment="" />
+    <list default="true" id="5dd57bb7-be91-432b-af40-5e35fe8299fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/10/Makefile" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,26 +27,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/10/mainv2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/10/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+            <state relative-caret-position="-300">
+              <caret line="153" selection-start-line="153" selection-end-line="170" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/10/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/10/input">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="818">
-              <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
+            <state relative-caret-position="662">
+              <caret line="89" column="3" lean-forward="true" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -123,9 +126,9 @@
         <option value="$PROJECT_DIR$/9/main.cpp" />
         <option value="$PROJECT_DIR$/10/main.cpp" />
         <option value="$PROJECT_DIR$/test/text.cpp" />
-        <option value="$PROJECT_DIR$/10/Makefile" />
-        <option value="$PROJECT_DIR$/10/mainv2.cpp" />
         <option value="$PROJECT_DIR$/10/input" />
+        <option value="$PROJECT_DIR$/10/mainv2.cpp" />
+        <option value="$PROJECT_DIR$/10/Makefile" />
       </list>
     </option>
   </component>
@@ -208,12 +211,12 @@
       <workItem from="1607158509983" duration="16812000" />
       <workItem from="1607420562414" duration="17506000" />
       <workItem from="1607535679462" duration="10445000" />
-      <workItem from="1607591817038" duration="30719000" />
+      <workItem from="1607591817038" duration="31376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116304000" />
+    <option name="totallyTimeSpent" value="116961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1679" y="0" width="1700" height="1447" extended-state="0" />
@@ -402,24 +405,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10/Makefile">
+    <entry file="file://$PROJECT_DIR$/10/input">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        <state relative-caret-position="662">
+          <caret line="89" column="3" lean-forward="true" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/10/mainv2.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+        <state relative-caret-position="-300">
+          <caret line="153" selection-start-line="153" selection-end-line="170" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10/input">
+    <entry file="file://$PROJECT_DIR$/10/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
+        <state relative-caret-position="52">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
         </state>
       </provider>
     </entry>

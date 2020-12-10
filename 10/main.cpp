@@ -5,6 +5,10 @@
 #include <vector>
 #include <string>
 
+#include <thread>
+#include <future>
+#include <chrono>
+
 
 using namespace std;
 
@@ -42,9 +46,6 @@ class Node{
 			
 			if(childIds.size() == 0){
 				
-				vector<int> tmp;
-				tmp.push_back(currentValue);
-				list.push_back(tmp);
 				return list;
 				
 			}else{
@@ -63,6 +64,33 @@ class Node{
 				}
 				
 				return list;
+				
+			}
+			
+		}
+		
+		
+		double getChildOptions(map<int, Node> nodemap){
+			
+			double total = 0;
+			
+			if(childIds.size() == 0){
+				
+				return 1;
+				
+			}else{
+				
+				for(auto id: childIds){
+					
+					Node tmpnode = nodemap[id];
+					int tmp = tmpnode.getChildOptions(nodemap);
+					
+					total += tmp;
+					
+				}
+				
+				
+				return total;
 				
 			}
 			
@@ -140,12 +168,30 @@ int main() {
 	 */
 	
 	
-	vector<vector<int>> plist = nodeList[0].getChilds(nodeList);
+	//double plist = nodeList[0].getChildOptions(nodeList);
 	
+	map<int, double> paths;
 	
+	paths[0] = 1;
+	
+	for(int i = 1; i < nodeList.size(); i++){
+		
+		paths[i] = 0;
+		
+	}
+	
+	for(int i = 0; i < nodeList.size(); i++){
+		
+		for(auto id: nodeList[i].childIds){
+		
+			paths[id] += paths[i];
+		
+		}
+		
+	}
 	
 	cout << "Differencs Jolt 1 Per Jolt 3 (P1): " << joltDiff[1] * joltDiff[3] << endl;
-	cout << "Total Options (P2): " << plist.size() << endl;
+	cout << fixed << "Total Options (P2): " << paths[nodeList.size() - 1] << endl;
 	
 	return 0;
 	
