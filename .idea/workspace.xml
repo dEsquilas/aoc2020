@@ -21,20 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/9/main.cpp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10/mainv2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="610">
+              <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/9/input">
+        <entry file="file://$PROJECT_DIR$/10/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1259">
-              <caret line="925" column="14" lean-forward="true" selection-start-line="925" selection-start-column="14" selection-end-line="925" selection-end-column="14" />
+            <state relative-caret-position="52">
+              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/10/input">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="818">
+              <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -71,8 +80,8 @@
       <find>shiny gold</find>
       <find>v:</find>
       <find>50762</find>
-      <find>min</find>
       <find>507622668</find>
+      <find>min</find>
     </findStrings>
     <replaceStrings>
       <replace>tmp[0].compare(</replace>
@@ -112,6 +121,11 @@
         <option value="$PROJECT_DIR$/8/input" />
         <option value="$PROJECT_DIR$/9/input" />
         <option value="$PROJECT_DIR$/9/main.cpp" />
+        <option value="$PROJECT_DIR$/10/main.cpp" />
+        <option value="$PROJECT_DIR$/test/text.cpp" />
+        <option value="$PROJECT_DIR$/10/Makefile" />
+        <option value="$PROJECT_DIR$/10/mainv2.cpp" />
+        <option value="$PROJECT_DIR$/10/input" />
       </list>
     </option>
   </component>
@@ -138,12 +152,7 @@
             <path>
               <item name="aoc2020" type="b2602c69:ProjectViewProjectNode" />
               <item name="aoc2020" type="462c0819:PsiDirectoryNode" />
-              <item name="8" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc2020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc2020" type="462c0819:PsiDirectoryNode" />
-              <item name="9" type="462c0819:PsiDirectoryNode" />
+              <item name="10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -155,18 +164,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/10" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\aoc2020\10" />
       <recent name="D:\Develop\aoc2020\9" />
       <recent name="D:\Develop\aoc2020\8" />
       <recent name="$PROJECT_DIR$/7" />
       <recent name="$PROJECT_DIR$/6" />
-      <recent name="$PROJECT_DIR$/5" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,12 +208,12 @@
       <workItem from="1607158509983" duration="16812000" />
       <workItem from="1607420562414" duration="17506000" />
       <workItem from="1607535679462" duration="10445000" />
-      <workItem from="1607591817038" duration="14654000" />
+      <workItem from="1607591817038" duration="30719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100239000" />
+    <option name="totallyTimeSpent" value="116304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1679" y="0" width="1700" height="1447" extended-state="0" />
@@ -221,7 +231,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33130237" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.17897944" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -364,17 +374,52 @@
     <entry file="file://$PROJECT_DIR$/9/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/9/input">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1259">
-          <caret line="925" column="14" lean-forward="true" selection-start-line="925" selection-start-column="14" selection-end-line="925" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/9/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/9/input">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="925" column="14" lean-forward="true" selection-start-line="925" selection-start-column="14" selection-end-line="925" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/text.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10/mainv2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10/input">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
         </state>
       </provider>
     </entry>
