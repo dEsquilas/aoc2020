@@ -227,17 +227,13 @@ class Board{
 			do{
 				
 				yn += incr;
-				//cout << "\tPos to check " << xn << " " << yn << endl;
 				
 				if(xn > width || xn < 0 || yn > height -1 || yn < 0)
 					break;
 				
 				if(state[yn][xn] == '#' || state[yn][xn] == 'L'){
 					
-					//cout << "\tSeat Found on " << xn << " " << yn << endl;
-					
 					if(state[yn][xn] == '#') {
-						//cout << "\tSeat OCCUPIED Found on " << xn << " " << yn << endl;
 						occupied = true;
 					}
 					
