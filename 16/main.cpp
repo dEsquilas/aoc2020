@@ -146,7 +146,7 @@ int main() {
 		total1 += i;
 	}
 	
-	//cout << "Total (p1): " << total1 << endl;
+	cout << "Total (p1): " << total1 << endl;
 	
 	for(int t = 0; t < rules.size(); t++) {
 		
@@ -155,9 +155,7 @@ int main() {
 			bool valid = true;
 			
 			for (int j = 0; j < tickets.size(); j++) {
-				//cout << "Checking " << r.name << " on value " << tickets[j][i] << endl;
 				if (!rules[t].check(tickets[j][i])) {
-					//cout << "Invalid found " << r.name << " on value " << tickets[j][i] << endl;
 					valid = false;
 					break;
 				}
@@ -169,21 +167,12 @@ int main() {
 		}
 	}
 	
-	
-	for(auto r: rules){
-		cout << "Rule " << r.name << " valid on ";
-		for(auto i: r.valid)
-			cout << i << " ";
-		cout << endl;
-	}
-	
 	vector<int> found;
 	
 	for(int i = 0; i < rules.size(); i++){
 		
 		for(int j = 0; j < rules.size(); j++)
 			if(rules[j].valid.size() == i + 1){
-				cout << "\tRule " << rules[j].name << " valid on " << i << endl;
 				rules[j].col = i;
 				if(rules[j].valid.size() == 1){
 					rules[j].col = rules[j].valid[0];
@@ -204,19 +193,12 @@ int main() {
 		
 	}
 	
-	cout << "------------------------------" << endl;
-	
-	for(auto r: rules){
-		cout << "Rule " << r.name << " col is " << r.col << endl;
-	}
-	
 	vector<string> yourTicketValues;
 	split(yourTicketValues, yourTicket[2], is_any_of(","));
 	long int total2 = 1;
 	
 	for(int i = 0; i < 6; i++){
 		total2 *= stoi(yourTicketValues[rules[i].col]);
-		cout << "Value " << yourTicketValues[rules[i].col] << " on " << rules[i].col << endl;
 	}
 	
 	cout << fixed << "Total (p2): " << total2 << endl;
