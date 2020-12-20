@@ -9,9 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dd57bb7-be91-432b-af40-5e35fe8299fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/16/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/16/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="5dd57bb7-be91-432b-af40-5e35fe8299fa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +22,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/16/main.cpp">
+        <entry file="file://$PROJECT_DIR$/17/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+            <state relative-caret-position="234">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/17/input">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -126,6 +133,8 @@
         <option value="$PROJECT_DIR$/16/Makefile" />
         <option value="$PROJECT_DIR$/16/input" />
         <option value="$PROJECT_DIR$/16/main.cpp" />
+        <option value="$PROJECT_DIR$/17/input" />
+        <option value="$PROJECT_DIR$/17/main.cpp" />
       </list>
     </option>
   </component>
@@ -153,12 +162,12 @@
             <path>
               <item name="aoc2020" type="b2602c69:ProjectViewProjectNode" />
               <item name="aoc2020" type="462c0819:PsiDirectoryNode" />
-              <item name="15" type="462c0819:PsiDirectoryNode" />
+              <item name="16" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aoc2020" type="b2602c69:ProjectViewProjectNode" />
               <item name="aoc2020" type="462c0819:PsiDirectoryNode" />
-              <item name="16" type="462c0819:PsiDirectoryNode" />
+              <item name="17" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -169,7 +178,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/16" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/17" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -177,11 +186,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\aoc2020\17" />
       <recent name="D:\Develop\aoc2020\16" />
       <recent name="D:\Develop\aoc2020\15" />
       <recent name="D:\Develop\aoc2020\14" />
       <recent name="D:\Develop\aoc2020\13" />
-      <recent name="D:\Develop\aoc2020\12" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -222,12 +231,12 @@
       <workItem from="1608145286341" duration="1385000" />
       <workItem from="1608151781114" duration="3101000" />
       <workItem from="1608194904014" duration="28045000" />
-      <workItem from="1608406049686" duration="8137000" />
+      <workItem from="1608406049686" duration="13817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195456000" />
+    <option name="totallyTimeSpent" value="201136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1679" y="0" width="1700" height="1447" extended-state="0" />
@@ -311,10 +320,6 @@ double eq(int x){
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3/Makefile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3/input.txt" />
     <entry file="file://$PROJECT_DIR$/3/input_2" />
     <entry file="file://$PROJECT_DIR$/3/output" />
     <entry file="file://$PROJECT_DIR$/3/input_base" />
@@ -563,8 +568,22 @@ double eq(int x){
     </entry>
     <entry file="file://$PROJECT_DIR$/16/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+        <state relative-caret-position="38">
+          <caret line="147" column="4" lean-forward="true" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17/input">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
