@@ -62,14 +62,7 @@ int countNearbyActive(unordered_map<Cell, char, Hash> cube, vector<Cell> nearby,
 	for(auto c: nearby){
 		Cell toCheck(current.x + c.x, current.y + c.y, current.z + c.z, current.t + c.t);
 		
-		/*if(c.z == 0){
-			
-			cout << "Cheking " << c.x << ", " << c.y << "< " << c.z << " ON " << current.x << ", " << current.y << " " << current.z << " VALUE " << cube.at(toCheck) << endl;
-			
-		}*/
-		
 		if(cube.find(toCheck) == cube.end()) {
-			//cout << "\tNOT EXISTS" << endl;
 			continue;
 		}
 		
@@ -93,8 +86,6 @@ int main() {
 	int zMax = 1;
 	int tMax = 1;
 	
-	int rng[] = {-1, 0, 1};
-	vector<Cell> nearby;
 	vector<string> fields;
 	
 	if (input.is_open()) {
@@ -108,6 +99,8 @@ int main() {
 		input.close();
 	}
 	
+	int rng[] = {-1, 0, 1};
+	vector<Cell> nearby;
 	for(auto a1: rng){
 		for(auto a2: rng){
 			for(auto a3: rng){
