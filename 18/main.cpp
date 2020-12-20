@@ -110,6 +110,95 @@ long unsigned int operate(string data, int offset){
 }
 
 
+long unsigned int operate2(string data, int offset){
+	
+	cout << "Cheking Parenthedis for " << data << endl;
+	
+	do{
+		Range *r = getPharenthesisPosition(offset, data);
+		if(r->start == -1)
+			break;
+		
+		int parenthesisOperation = operate2(data.substr(r->start + 1, r->end - r->start -1), 0);
+		
+		string dataPrev = data.substr(0, r->start);
+		string dataPos = data.substr(r->end+1);
+		
+		data = dataPrev + to_string(parenthesisOperation) + dataPos;
+		
+		cout << "Updated Data is " << data << endl;
+		
+	}while(true);
+	
+	cout << "Data to calculate: " << data << endl;
+	
+	vector<string> elements;
+	split(elements, data, is_any_of(" "));
+	
+	cout << "Splitted: ";
+	for(auto e: elements)
+		cout << e << " ";
+	cout << endl;
+	
+	// Replaces SUM parts
+	
+	long int tmp;
+	
+	int i = 1;
+	
+	do{
+		
+		vector<string> auxElements;
+		
+		if(elements[i][0] == '+'){
+			
+			long int tmp = stoi(elements[i-1]) + stoi(elements[i+1]);
+			
+			for(int j = 0; j < i-1; j++){
+				auxElements.push_back(elements[j]);
+			}
+			
+			auxElements.push_back(to_string(tmp));
+			
+			for(int j = i+2; j < elements.size(); j++){
+				auxElements.push_back(elements[j]);
+			}
+			
+			elements = auxElements;
+			
+		}
+		else{
+			i += 2;
+		}
+		
+	}while(i < elements.size());
+	
+	cout << "Checked Plus: ";
+	
+	for(auto e: elements)
+		cout << e << " ";
+	cout << endl;
+	
+	long int ret = stoi(elements[0]);
+	
+	for(int i = 1; i < elements.size(); i+=2){
+		
+		if(elements[i][0] == '*'){
+			ret = ret * stoi(elements[i+1]);
+		}
+		
+	}
+	
+	cout << "Returning " << ret << " for " << data << endl;
+	
+	return ret;
+	
+	
+}
+
+
+
+
 int main() {
 	
 	ifstream input("input");
@@ -129,7 +218,7 @@ int main() {
 	long unsigned int i = 0;
 	
 	for(auto o: operations) {
-		long unsigned int tmp = operate(o, 0);
+		long unsigned int tmp = operate2(o, 0);
 		cout << tmp << endl;
 		i += tmp;
 	}
